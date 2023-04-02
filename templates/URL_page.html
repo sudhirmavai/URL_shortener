@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+{% block title %}URL Shortener{% endblock %}
+
+{% block content %}
+<center><h1 style="font-family:verdana;">URL Shortener</h1></center>
+<center>
+    <hr>
+    <br>
+    <form action="/" , method="post">
+        <label for="url_link">Please Enter the URL</label>
+        <br><br>
+        <input type="url" name="url_link" id="url_link" placeholder="For example => https://www.innomatics.in/" size="50">
+        <br><br>
+        <input type="submit" value="Get Shorted URL" class="btn btn-primary">
+    </form>
+    <br>
+    {% if short_url_display %}
+    <hr>
+    <h2>Click to copy shorted URL</h2>
+    <br>
+    <h4>http://127.0.0.1:5000/{{short_url_display}}</h4>
+
+    {% endif %}
+</center>
+{% endblock %}

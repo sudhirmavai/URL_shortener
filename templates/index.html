@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+     <style>
+     body {background-color: powderblue;}
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>{% block title %} {% endblock %}</title>
+
+</head>
+
+<body>
+    <div >
+        <nav >
+            <div  style = "color: red; background-color:white;font-size:36px;">
+                <a  href="/">Home</a>       |
+                <a  aria-current="page" href="/history">URL History</a>
+            </div>
+        </nav>
+        <hr>
+        <br>
+        {% block content%}
+        {% endblock %}
+    </div>
+</body>
+
+</html>

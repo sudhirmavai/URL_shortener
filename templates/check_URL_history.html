@@ -1,0 +1,35 @@
+{% extends "index.html" %}
+{% block title %}URL History{% endblock %}
+
+{% block content %}
+<h1>URL History</h1>
+<hr>
+<div >
+  <h3>Your URL List</h3>
+  {% if vals|length == 0 %}
+  <div role="alert">No URL found. Add your first URL now!</div>
+  {% else %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">long_url</th>
+        <th scope="col">shorted_url</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for url in vals %}
+      <tr>
+        <th scope="row">{{loop.index}}</th>
+        <td>{{url.long_url}}</td>
+        <td>http://127.0.0.1:5000/{{url.shorted_url}}</td>
+        <td>
+          <a href="/delete/{{url.id}}" type="button" class="btn btn-outline-dark btn-sm mx-1">Delete</button>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+</div>
+{% endblock %}
